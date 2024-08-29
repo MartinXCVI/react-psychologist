@@ -1,0 +1,11 @@
+@use '../includes/colors' as color;
+@use '../includes/mixins' as mx;
+@use '../includes/typography' as font;
+@use '../includes/variables' as var;
+
+.header {
+  width: 100%;
+  @include mx.flexRow(var.$between, center);
+  background-color: color.$whiteSmoke;
+  padding: 1.5rem 3rem;
+}

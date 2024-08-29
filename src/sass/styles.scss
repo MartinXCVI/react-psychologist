@@ -1,1 +1,21 @@
+/*----- Includes -----*/
+
+@use './includes/colors';
+@use './includes/mixins';
+@use './includes/typography';
+@use './includes/variables';
+
+/*----- Global -----*/
+
 @use './global.scss';
+
+/*----- Components -----*/
+
+@use './components/header.scss';
+@use './components/navbar.scss';
+@use './components/logo.scss';
+@use './components/appointBtn.scss';
+
+
+/*----- Views -----*/
+
