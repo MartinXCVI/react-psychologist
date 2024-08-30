@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { motion } from "framer-motion"
 
 import { Link } from 'react-router-dom'
 
@@ -8,14 +9,28 @@ import { IoIosCloseCircleOutline } from "react-icons/io";
 
 const Navbar = () => {
 
-  const [menuClass, setMenuClass] = useState('hidden-menu')
+  const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const [isMenuClosed, setIsMenuClosed] = useState(true)
+  const [displayStyle, setDisplayStyle] = useState('none')
 
   function displayNavMenu() {
-    setMenuClass('')
+    if(!isMenuOpen) {
+    setDisplayStyle('flex')
+    setIsMenuOpen(true)
+    setIsMenuClosed(false)
+    }
   }
 
   function hideNavMenu() {
-    setMenuClass('hidden-menu')
+    if(!isMenuClosed) {
+    setIsMenuOpen(false)
+    setIsMenuClosed(true)
+    }
+  }
+
+  const menuVariants = {
+    open: { opacity: 1, y: 0 },
+    closed: { opacity: 0, y: "-100%" },
   }
 
   return (
@@ -23,7 +38,12 @@ const Navbar = () => {
       <div className="menu-div" onClick={displayNavMenu}>
         <IoMenu className='menu-icon' />
       </div>
-      <ul className={`nav-list ${menuClass}`}>
+      <motion.ul className={`nav-list`}
+        style={{display: displayStyle}}
+        animate={isMenuOpen ? "open" : "closed"}
+        variants={menuVariants}
+        transition={{duration: 0.5}}
+      >
         <div className="close-div" onClick={hideNavMenu}>
           <IoIosCloseCircleOutline className='close-icon' />
         </div>
@@ -42,7 +62,7 @@ const Navbar = () => {
         <li className="nav-item">
           <Link to="/contact" className="nav-link" onClick={hideNavMenu}>Contact</Link>
         </li>
-      </ul>
+      </motion.ul>
     </nav>    
   )
 }

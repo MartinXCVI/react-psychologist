@@ -43,13 +43,17 @@ p {
   justify-content: space-evenly;
   align-items: center;
   gap: 1.5rem;
+  will-change: unset;
 }
 .navbar .nav-list .nav-item .nav-link {
-  color: #fefefe;
+  color: #303030;
 }
 
 .menu-div {
   display: none;
+}
+.menu-div .menu-icon {
+  color: #303030;
 }
 
 .close-div {
@@ -59,7 +63,7 @@ p {
 .close-icon {
   width: 3rem;
   height: 2rem;
-  color: #fefefe;
+  color: #303030;
 }
 
 @media all and (max-width: 991px) {
@@ -79,7 +83,7 @@ p {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: #303030;
+    background-color: #d3d3d3;
     position: fixed;
     top: 0;
     left: 0;
@@ -109,6 +113,13 @@ p {
   .menu-icon {
     height: 2rem;
     width: 3rem;
+  }
+}
+@media all and (min-width: 992px) {
+  .navbar .nav-list {
+    display: flex !important;
+    opacity: 1 !important;
+    transform: translateY(-25%) !important;
   }
 }
 .logo-div {
