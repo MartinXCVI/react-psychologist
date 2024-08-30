@@ -6,3 +6,9 @@
 .logo-div {
   padding: 1rem;
 }
+
+@media all and (max-width: 991px) {
+  .logo-div {
+    margin-bottom: 0.75rem;
+  }
+}
