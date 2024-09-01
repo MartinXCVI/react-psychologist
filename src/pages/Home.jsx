@@ -2,7 +2,8 @@
 
 const Home = () => {
   return (
-    <div>Hello from Home</div>
+    <div className="temporal-div">Hello from Home</div>
+    
   )
 }
 

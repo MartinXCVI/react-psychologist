@@ -1,0 +1,64 @@
+@use '../includes/colors' as color;
+@use '../includes/mixins' as mx;
+@use '../includes/typography' as font;
+@use '../includes/variables' as var;
+
+.footer {
+  width: 100%;
+  @include mx.flexRow(var.$evenly, center);
+  padding: 3rem 1.5rem;
+  background-color: color.$lightGrey;
+
+  .logo-div {
+    margin-bottom: 1.75rem;
+    padding-left: 0;
+  }
+
+  .footer-section-left {
+    width: 50%;
+    @include mx.flexCol(center, flex-start);
+
+    .contact-info {
+      p {
+        font-size: 1.2rem;
+      }
+    }
+  }
+  .footer-section-right {
+    width: 50%;
+    min-width: 50%;
+    @include mx.flexRow(center, center);
+    .hourlies-section {
+      .hourlies-subtitle {
+        margin-bottom: 0.5rem;
+      }
+      .hourlies-list {
+        .hourlies-item {
+          margin-bottom: 0.75rem;
+
+          .hourlies-day {
+            margin-bottom: 0.25rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media all and (max-width: 991px) {
+
+  .footer {
+    @include mx.flexCol(var.$evenly, center);
+    .footer-section-left {
+      width: 100%;
+      margin-bottom: 2rem;
+    }
+    .footer-section-right {
+      width: 100%;
+      
+      .hourlies-section {
+        width: 100%;
+      }
+    }
+  }
+}

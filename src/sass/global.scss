@@ -1,3 +1,8 @@
+@use './includes/mixins' as mx;
+@use './includes/colors' as color;
+@use './includes/typography' as font;
+@use './includes/variables' as var;
+
 * {
   border: 0;
   margin: 0;
@@ -16,4 +21,9 @@ a {
 p {
   margin-bottom: 0.75rem;
   font-size: 1rem;
+}
+
+.temporal-div {
+  min-height: 100vh;
+  @include mx.flexCol(center, center);
 }
