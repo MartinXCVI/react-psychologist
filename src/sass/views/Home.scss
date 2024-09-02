@@ -1,0 +1,68 @@
+@use '../includes/colors' as color;
+@use '../includes/mixins' as mx;
+@use '../includes/typography' as font;
+@use '../includes/variables' as var;
+
+.landing-section {
+  width: 100%;
+  min-height: 75vh;
+  @include mx.flexRow(center, center);
+  background-color: #97D8C4;
+  padding: 1rem;
+  .landing-section-left {
+    width: 50%;
+    min-height: 25vh;
+    max-width: 50%;
+    @include mx.flexCol(flex-start, center);
+  }
+  .landing-section-right {
+    width: 50%;
+    max-width: 50%;
+    min-height: 25vh;
+    @include mx.flexCol(flex-end, center);
+  }
+  .landing-text {
+    width: 75%;
+    text-align: start;
+  }
+}
+
+.landing-info-block {
+  width: 100%;
+  min-height: 90vh;
+  @include mx.flexRow(center, center);
+  padding: 1rem;
+  .left-block {
+    width: 50%;
+  }
+  .right-block {
+    width: 50%;
+  }
+}
+
+.figure-block {
+  width: 100%;
+  @include mx.flexCol(center, center);
+  img {
+    width: 50%;
+  }
+}
+
+.text-block {
+  width: 75%;
+}
+
+.home-container {
+  @include mx.flexRow(var.$evenly, center);
+  flex-wrap: wrap;
+}
+
+.home-container .home-card {
+  width: 20%;
+  .card-figure {
+    width: 100%;
+    img {
+      width: 100%;
+    }
+  }
+}
