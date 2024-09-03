@@ -1,3 +1,4 @@
+import { PropTypes } from 'prop-types'
 
 const HomeCard = ({ img, alt, title, data }) => {
   return (
@@ -9,6 +10,13 @@ const HomeCard = ({ img, alt, title, data }) => {
       <p>{data}</p>
     </div>
   )
+}
+
+HomeCard.propTypes = {
+  img: PropTypes.string,
+  alt: PropTypes.string,
+  title: PropTypes.string,
+  data: PropTypes.string
 }
 
 export default HomeCard

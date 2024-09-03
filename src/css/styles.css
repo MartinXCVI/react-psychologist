@@ -28,10 +28,8 @@ p {
   align-items: center;
 }
 
-.container {
-  width: 100%;
-  min-height: 100vh;
-  display: flex;
+.page-subtitle {
+  margin-bottom: 3rem;
 }
 
 /*----- Components -----*/
@@ -212,6 +210,43 @@ p {
     width: 100%;
   }
 }
+.container {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+}
+
+.quote-parallax-section {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.quote-parallax-section .blockquote-parallax {
+  width: 50%;
+  color: #fefefe;
+  text-align: center;
+}
+.quote-parallax-section .blockquote-parallax .quote-parallax-text {
+  font-size: 1.75rem;
+  line-height: 2.25rem;
+  font-style: italic;
+  margin-bottom: 2rem;
+}
+.quote-parallax-section .blockquote-parallax .quote-parallax-author {
+  font-size: 1.25rem;
+}
+
+@media all and (max-width: 992px) {
+  .quote-parallax-section {
+    padding: 3rem 0;
+  }
+  .quote-parallax-section .blockquote-parallax {
+    width: 90%;
+  }
+}
 /*----- Views -----*/
 .landing-section {
   width: 100%;
@@ -290,6 +325,95 @@ p {
 }
 .home-container .home-card .card-figure img {
   width: 100%;
+}
+
+.why-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.why-container {
+  min-height: unset;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.why-container .home-card {
+  width: 15%;
+  min-height: 17.5rem;
+  padding: 1rem;
+  gap: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+.why-container .home-card .card-figure {
+  width: 50%;
+}
+.why-container .home-card .card-figure img {
+  width: 100%;
+}
+
+.quote-parallax-home {
+  position: relative;
+}
+.quote-parallax-home ::before {
+  content: "";
+  inset: 0;
+  position: absolute;
+  z-index: -3;
+  background: #353535;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  opacity: 0.2;
+}
+.quote-parallax-home ::after {
+  content: "";
+  inset: 0;
+  position: absolute;
+  z-index: -5;
+  background-image: url("/images/home-quote.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  opacity: 0.8;
+  background-attachment: fixed;
+}
+
+@media all and (max-width: 480px) {
+  .why-container {
+    gap: 1.5rem;
+  }
+  .why-container .home-card {
+    width: 90%;
+  }
+}
+@media all and (max-width: 767px) {
+  .why-container {
+    flex-direction: column;
+  }
+}
+@media all and (min-width: 481px) and (max-width: 767px) {
+  .why-container {
+    gap: 2rem;
+  }
+  .why-container .home-card {
+    width: 75%;
+  }
+}
+@media all and (min-width: 768px) and (max-width: 991px) {
+  .why-container {
+    gap: 2rem;
+  }
+  .why-container .home-card {
+    width: 35%;
+    min-height: 20rem;
+  }
 }
 
 /*# sourceMappingURL=styles.css.map */

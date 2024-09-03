@@ -1,0 +1,34 @@
+@use '../includes/colors' as color;
+@use '../includes/mixins' as mx;
+@use '../includes/typography' as font;
+@use '../includes/variables' as var;
+
+.quote-parallax-section {
+  width: 100%;
+  min-height: 100vh;
+  @include mx.flexCol(center, center);
+  .blockquote-parallax {
+    width: 50%;
+    color: color.$white;
+    text-align: center;
+    .quote-parallax-text {
+      font-size: 1.75rem;
+      line-height: 2.25rem;
+      font-style: italic;
+      margin-bottom: 2rem;
+    }
+    .quote-parallax-author {
+      font-size: 1.25rem;
+    }
+  }
+}
+
+@media all and (max-width: 992px) {
+
+  .quote-parallax-section {
+    padding: 3rem 0;
+    .blockquote-parallax {
+      width: 90%;
+    }
+  }
+}

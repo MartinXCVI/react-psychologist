@@ -1,25 +1,35 @@
+import PropTypes from 'prop-types'
 
-
-const InfoBlock = () => {
+const InfoBlock = ({ img, alt, title, subtitle, textOne, textTwo }) => {
   return (
     <section className="landing-info-block">
       <section className="left-block">
         <figure className="figure-block">
-         <img src="/icons/therapy.png" alt="" />
+         <img src={img} alt={alt} />
         </figure>
       </section>
       <section className="right-block">
         <div className="heading-block">
-          <h3>Title, Title</h3>
-          <h4>Subtitle, Subtitle</h4>
+          <h3>{title}</h3>
+          <h4>{subtitle}</h4>
         </div>
         <div className="text-block">
-          <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolores molestiae debitis asperiores possimus natus. Eveniet suscipit doloribus dolores maiores culpa!</p>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem voluptatem voluptates quibusdam dolorum quisquam voluptatibus totam. Facere, ea dolor! Aut et, iure delectus sunt aperiam explicabo error, eum necessitatibus ab, labore vel ipsum harum qui.</p>
+          <p>{textOne}</p>
+          <p>{textTwo}</p>
+          
         </div>
       </section>
     </section>
   )
+}
+
+InfoBlock.propTypes = {
+  img: PropTypes.string,
+  alt: PropTypes.string,
+  title: PropTypes.string,
+  subtitle: PropTypes.string,
+  textOne: PropTypes.string,
+  textTwo: PropTypes.string
 }
 
 export default InfoBlock

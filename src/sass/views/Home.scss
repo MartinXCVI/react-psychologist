@@ -66,3 +66,71 @@
     }
   }
 }
+
+.why-wrapper {
+  @include mx.flexCol(center, center);
+}
+
+.why-container {
+  min-height: unset;
+  @include mx.flexRow(var.$evenly, center);
+  flex-wrap: wrap;
+  .home-card {
+    width: 15%;
+    min-height: 17.5rem;
+    padding: 1rem;
+    gap: 1rem;
+    @include mx.flexCol(flex-start, center);
+    .card-figure {
+      width: 50%;
+      img {
+      width: 100%;
+      }
+    }
+  }
+}
+
+.quote-parallax-home {
+  position: relative;
+  ::before {
+    @include mx.bgColor(-3, color.$softerBlack, 0.2);
+  }
+  ::after {
+    @include mx.bgHeroImg(-5, '/images/home-quote.jpg', 0.8);
+    background-attachment: fixed;
+  }
+}
+
+@media all and (max-width: 480px) {
+  .why-container {
+    gap: 1.5rem;
+    .home-card {
+      width: 90%;
+    }
+  }
+}
+
+@media all and (max-width: 767px) {
+  .why-container {
+    flex-direction: column;
+  }
+}
+
+@media all and (min-width: 481px) and (max-width: 767px) {
+  .why-container {
+    gap: 2rem;
+    .home-card {
+      width: 75%;
+    }
+  }
+}
+
+@media all and (min-width: 768px) and (max-width: 991px) {
+  .why-container {
+    gap: 2rem;
+    .home-card {
+      width: 35%;
+      min-height: 20rem;
+    }
+  }
+}
