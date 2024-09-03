@@ -5,26 +5,60 @@
 
 .landing-section {
   width: 100%;
-  min-height: 75vh;
+  min-height: 86vh;
   @include mx.flexRow(center, center);
-  background-color: #97D8C4;
+  position: relative;
   padding: 1rem;
+  &::after {
+    @include mx.bgHeroImg(-5, '/images/home-hero.webp', 0.9);
+    background-position: top;
+  }
   .landing-section-left {
     width: 50%;
-    min-height: 25vh;
+    min-height: 40vh;
     max-width: 50%;
-    @include mx.flexCol(flex-start, center);
+    @include mx.flexCol(center, center);
+    margin-bottom: 2rem;
+    margin-left: 3rem;
+    .landing-title {
+      font-size: 3rem;
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+    .landing-button {
+      background-color: color.$firstColor;
+      color: color.$whiteSmoke;
+      padding: 1rem 2.5rem;
+      border-radius: 0.25rem;
+      transition: var.$trs03;
+      &:hover {
+        @include mx.colorize(color.$secondColor, color.$white);
+      }
+    }
   }
   .landing-section-right {
     width: 50%;
     max-width: 50%;
-    min-height: 25vh;
-    @include mx.flexCol(flex-end, center);
+    min-height: 35vh;
+    @include mx.flexCol(center, center);
+    margin-bottom: 2rem;
+    margin-right: 3rem;
+    .landing-section-figure {
+      width: 30%;
+      img {
+        width: 100%;
+      }
+    }
   }
   .landing-text {
     width: 75%;
-    text-align: start;
+    text-align: center;
+    margin-bottom: 0.5rem;
   }
+}
+
+.landing-title, .landing-text {
+  text-shadow: 0 0 0.05rem color.$white;
 }
 
 .landing-info-block {
@@ -108,6 +142,20 @@
       width: 90%;
     }
   }
+  .landing-section {
+    .landing-section-left {
+      .landing-title {
+        font-size: 2rem;
+        margin-bottom: 1.5rem;
+      }
+    }
+    .landing-section-right {
+      .landing-text {
+        width: 90%;
+        font-size: 1.25rem;
+      }
+    }
+  }
 }
 
 @media all and (max-width: 767px) {
@@ -131,6 +179,28 @@
     .home-card {
       width: 35%;
       min-height: 20rem;
+    }
+  }
+}
+
+@media all and (max-width: 991px) {
+
+  .landing-section {
+    @include mx.flexCol(center, center);
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+    &::after {
+      @include mx.bgHeroImg(-5, '/images/home-hero-mobile.jpg', 0.8);
+    }
+    .landing-section-left {
+      width: 100%;
+      max-width: 100%;
+      margin-left: 0;
+    }
+    .landing-section-right {
+      width: 100%;
+      max-width: 100%;
+      margin-right: 0;
     }
   }
 }

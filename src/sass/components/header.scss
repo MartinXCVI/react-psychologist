@@ -6,12 +6,14 @@
 .header {
   width: 100%;
   @include mx.flexRow(var.$between, center);
-  background-color: color.$softGrey;
-  padding: 1.5rem 3rem;
+  background-color: color.$softerGrey;
+  padding: 0.5rem 3rem;
+  border-bottom: 2px solid color.$firstColor;
 }
 
 @media all and (max-width: 991px) {
   .header {
     @include mx.flexCol(var.$evenly, center);
+    padding-bottom: 2rem;
   }
 }

@@ -6,7 +6,7 @@
   padding: 0;
   outline: none;
   box-sizing: border-box;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-family: "Open Sans", system-ui, sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   text-decoration: none;
   list-style: none;
 }
@@ -32,14 +32,21 @@ p {
   margin-bottom: 3rem;
 }
 
+h1, h2 {
+  font-family: "Kalnia", serif, system-ui;
+  font-weight: 500;
+  color: #303030;
+}
+
 /*----- Components -----*/
 .header {
   width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #d3d3d3;
-  padding: 1.5rem 3rem;
+  background-color: #efefef;
+  padding: 0.5rem 3rem;
+  border-bottom: 2px solid #97D8C4;
 }
 
 @media all and (max-width: 991px) {
@@ -48,6 +55,7 @@ p {
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
+    padding-bottom: 2rem;
   }
 }
 .navbar .nav-list {
@@ -56,9 +64,15 @@ p {
   align-items: center;
   gap: 1.5rem;
   will-change: unset;
+  z-index: 10;
 }
 .navbar .nav-list .nav-item .nav-link {
-  color: #303030;
+  font-size: 1.05rem;
+  color: #3ba786;
+  transition: 0.3s linear all;
+}
+.navbar .nav-list .nav-item .nav-link:hover {
+  color: #353535;
 }
 
 .menu-div {
@@ -131,11 +145,14 @@ p {
   .navbar .nav-list {
     display: flex !important;
     opacity: 1 !important;
-    transform: translateY(-25%) !important;
+    transform: translateY(-10%) !important;
   }
 }
 .logo-div {
   padding: 1rem;
+}
+.logo-div h1 {
+  color: #3ba786;
 }
 
 @media all and (max-width: 991px) {
@@ -143,9 +160,19 @@ p {
     margin-bottom: 0.75rem;
   }
 }
-.appointment-div {
-  padding: 1rem;
-  border: 1px solid gray;
+.appointment-div .appoint-btn {
+  padding: 0.5rem;
+  background-color: transparent;
+  color: #3ba786;
+  border: 1px solid #3ba786;
+  border-radius: 0.25rem;
+  transition: 0.3s linear all;
+  color: #3ba786;
+}
+.appointment-div .appoint-btn:hover {
+  background-color: #97D8C4;
+  color: #f6f6f6;
+  border-color: #97D8C4;
 }
 
 @media all and (max-width: 991px) {
@@ -250,34 +277,77 @@ p {
 /*----- Views -----*/
 .landing-section {
   width: 100%;
-  min-height: 75vh;
+  min-height: 86vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #97D8C4;
+  position: relative;
   padding: 1rem;
+}
+.landing-section::after {
+  content: "";
+  inset: 0;
+  position: absolute;
+  z-index: -5;
+  background-image: url("/images/home-hero.webp");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  opacity: 0.9;
+  background-position: top;
 }
 .landing-section .landing-section-left {
   width: 50%;
-  min-height: 25vh;
+  min-height: 40vh;
   max-width: 50%;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: center;
+  margin-bottom: 2rem;
+  margin-left: 3rem;
+}
+.landing-section .landing-section-left .landing-title {
+  font-size: 3rem;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+.landing-section .landing-section-left .landing-button {
+  background-color: #97D8C4;
+  color: #f6f6f6;
+  padding: 1rem 2.5rem;
+  border-radius: 0.25rem;
+  transition: 0.3s linear all;
+}
+.landing-section .landing-section-left .landing-button:hover {
+  background-color: #3ba786;
+  color: #fefefe;
 }
 .landing-section .landing-section-right {
   width: 50%;
   max-width: 50%;
-  min-height: 25vh;
+  min-height: 35vh;
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
+  justify-content: center;
   align-items: center;
+  margin-bottom: 2rem;
+  margin-right: 3rem;
+}
+.landing-section .landing-section-right .landing-section-figure {
+  width: 30%;
+}
+.landing-section .landing-section-right .landing-section-figure img {
+  width: 100%;
 }
 .landing-section .landing-text {
   width: 75%;
-  text-align: start;
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+
+.landing-title, .landing-text {
+  text-shadow: 0 0 0.05rem #fefefe;
 }
 
 .landing-info-block {
@@ -392,6 +462,14 @@ p {
   .why-container .home-card {
     width: 90%;
   }
+  .landing-section .landing-section-left .landing-title {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+  }
+  .landing-section .landing-section-right .landing-text {
+    width: 90%;
+    font-size: 1.25rem;
+  }
 }
 @media all and (max-width: 767px) {
   .why-container {
@@ -413,6 +491,37 @@ p {
   .why-container .home-card {
     width: 35%;
     min-height: 20rem;
+  }
+}
+@media all and (max-width: 991px) {
+  .landing-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+  }
+  .landing-section::after {
+    content: "";
+    inset: 0;
+    position: absolute;
+    z-index: -5;
+    background-image: url("/images/home-hero-mobile.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity: 0.8;
+  }
+  .landing-section .landing-section-left {
+    width: 100%;
+    max-width: 100%;
+    margin-left: 0;
+  }
+  .landing-section .landing-section-right {
+    width: 100%;
+    max-width: 100%;
+    margin-right: 0;
   }
 }
 

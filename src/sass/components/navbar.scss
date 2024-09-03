@@ -8,9 +8,15 @@
     @include mx.flexRow(var.$evenly, center);
     gap: 1.5rem;
     will-change: unset;
+    z-index: 10;
     .nav-item {
       .nav-link{
-        color: color.$softBlack;
+        font-size: 1.05rem;
+        color: color.$secondColor;
+        transition: var.$trs03;
+        &:hover {
+          color: color.$softerBlack;
+        }
       }
     } 
   }
@@ -87,7 +93,7 @@
     .nav-list {
       display: flex !important;
       opacity: 1 !important;
-      transform: translateY(-25%) !important;
+      transform: translateY(-10%) !important;
     }
   }
 }

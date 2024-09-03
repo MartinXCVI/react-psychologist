@@ -5,6 +5,9 @@
 
 .logo-div {
   padding: 1rem;
+  h1 {
+    color: color.$secondColor;
+  }
 }
 
 @media all and (max-width: 991px) {
