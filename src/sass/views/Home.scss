@@ -23,12 +23,13 @@
     .landing-title {
       font-size: 3rem;
       text-align: center;
-      margin-bottom: 2rem;
+      margin-bottom: 1rem;
     }
     .landing-button {
       background-color: color.$firstColor;
       color: color.$whiteSmoke;
       padding: 1rem 2.5rem;
+      margin-bottom: 1rem;
       border-radius: 0.25rem;
       transition: var.$trs03;
       &:hover {
@@ -43,10 +44,24 @@
     @include mx.flexCol(center, center);
     margin-bottom: 2rem;
     margin-right: 3rem;
-    .landing-section-figure {
-      width: 30%;
-      img {
-        width: 100%;
+    .blockquote-wrapper {
+      width: 75%;
+      background-color: color.$firstColor;
+      padding: 1rem;
+      .landing-blockquote {
+        border: 1px solid #35353535;
+        padding: 1rem;
+        color: color.$softBlack;
+        .landing-quote {
+          q {
+            font-family: font.$titleFont !important;
+            font-size: 1.75rem;
+          }
+        }
+        .landing-quote-author {
+          font-size: 1.25rem;
+          font-style: italic;
+        }
       }
     }
   }
@@ -150,6 +165,19 @@
       }
     }
     .landing-section-right {
+      .blockquote-wrapper {
+        width: 90%;
+        .landing-blockquote {
+          .landing-quote {
+            q {
+              font-size: 1.25rem;
+            }
+          }
+          .landing-quote-author {
+            font-size: 0.9rem;
+          }
+        }
+      }
       .landing-text {
         width: 90%;
         font-size: 1.25rem;
