@@ -1,8 +1,8 @@
 import PropTypes from 'prop-types'
 
-const InfoBlock = ({ img, alt, title, subtitle, textOne, textTwo }) => {
+const InfoBlock = ({ className, img, alt, title, subtitle, textOne, textTwo }) => {
   return (
-    <section className="landing-info-block">
+    <section className={`landing-info-block ${className}`}>
       <section className="left-block">
         <figure className="figure-block">
          <img src={img} alt={alt} />
@@ -10,13 +10,12 @@ const InfoBlock = ({ img, alt, title, subtitle, textOne, textTwo }) => {
       </section>
       <section className="right-block">
         <div className="heading-block">
-          <h3>{title}</h3>
-          <h4>{subtitle}</h4>
+          <h3 className='heading-block-title'>{title}</h3>
+          <h4 className='heading-block-subtitle'>{subtitle}</h4>
         </div>
         <div className="text-block">
           <p>{textOne}</p>
           <p>{textTwo}</p>
-          
         </div>
       </section>
     </section>
@@ -24,6 +23,7 @@ const InfoBlock = ({ img, alt, title, subtitle, textOne, textTwo }) => {
 }
 
 InfoBlock.propTypes = {
+  className: PropTypes.string,
   img: PropTypes.string,
   alt: PropTypes.string,
   title: PropTypes.string,

@@ -9,35 +9,35 @@ const Home = () => {
     <>
       <Landing />
       <InfoBlock 
-        img='/icons/therapy.png'
+        img='/icons/empathy.png'
         alt='alt'
-        title='title, title'
-        subtitle='subtitle, subtitle'
-        textOne='Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos quis possimus corporis magni necessitatibus expedita dignissimos accusamus quisquam? Aspernatur neque temporibus autem, molestiae rerum tempore?'
-        textTwo='Lorem, ipsum dolor sit amet consectetur adipisicing elit. Facere iusto totam soluta magni ratione labore quaerat est, nam illo consequuntur consectetur, quis in repellat dolorem repellendus fuga exercitationem amet? Dolorem itaque totam quidem ullam magni!'
+        title='Promoting Compassion,'
+        subtitle='Embracing Empathy'
+        textOne='Quos quis possimus corporis magni necessitatibus expedita dignissimos accusamus quisquam? Aspernatur neque temporibus autem, molestiae rerum tempore?'
+        textTwo='Facere iusto totam soluta magni ratione labore quaerat est, nam illo consequuntur consectetur, quis in repellat dolorem repellendus fuga exercitationem amet?'
       />
       <Container className={`home-container`}>
         <HomeCard
-          img='/icons/therapy.png'
+          img='/images/online-sessions.jpg'
           alt='alt name'
-          title='title'
-          data='description'
+          title={<><strong className="home-card-strong">Online</strong> <br/> Sessions</>}
+          data='Quos quis possimus corporis magni necessitatibus expedita dignissimos accusamus quisquam. Facere iusto totam soluta magni'
         />
         <HomeCard
-          img='/icons/therapy.png'
+          img='/images/group-sessions.jpg'
           alt='alt name'
-          title='title'
-          data='description'
+          title={<><strong className="home-card-strong">Group</strong><br/> Sessions</>}
+          data='Quos quis possimus corporis magni necessitatibus expedita dignissimos accusamus quisquam. Facere iusto totam soluta magni'
         />
         <HomeCard
-          img='/icons/therapy.png'
+          img='/images/individual-therapies.jpg'
           alt='alt name'
-          title='title'
-          data='description'
+          title={<><strong className="home-card-strong">Individual</strong> <br/> Therapies</>}
+          data='Quos quis possimus corporis magni necessitatibus expedita dignissimos accusamus quisquam. Facere iusto totam soluta magni'
         />
       </Container>
       <Container className='why-wrapper'>
-        <h2 className="page-subtitle">Why Us</h2>
+        <h2 className="page-subtitle">Why Working With Us</h2>
         <Container className='why-container'>
         <HomeCard
           img='/icons/personalized.png'
@@ -77,12 +77,13 @@ const Home = () => {
         author='Vincent Van Gogh'
       />
       <InfoBlock 
-        img='/icons/therapy.png'
+        className='final-info-block'
+        img='/icons/potential.png'
         alt='alt'
-        title='title, title'
-        subtitle='subtitle, subtitle'
-        textOne='Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos quis possimus corporis magni necessitatibus expedita dignissimos accusamus quisquam? Aspernatur neque temporibus autem, molestiae rerum tempore?'
-        textTwo='Lorem, ipsum dolor sit amet consectetur adipisicing elit. Facere iusto totam soluta magni ratione labore quaerat est, nam illo consequuntur consectetur, quis in repellat dolorem repellendus fuga exercitationem amet? Dolorem itaque totam quidem ullam magni!'
+        title="Emotional Blooming,"
+        subtitle='For Personal Growth'
+        textOne='Quos quis possimus corporis magni necessitatibus expedita dignissimos accusamus quisquam. Facere iusto totam soluta magni'
+        textTwo='Quos quis possimus corporis magni necessitatibus expedita dignissimos accusamus quisquam. Facere iusto totam soluta magni'
       />
     </>
   )

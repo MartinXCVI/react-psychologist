@@ -17,7 +17,7 @@ a {
 
 p {
   margin-bottom: 0.75rem;
-  font-size: 1rem;
+  font-size: 1.1rem;
 }
 
 .temporal-div {
@@ -29,6 +29,7 @@ p {
 }
 
 .page-subtitle {
+  font-size: 2rem;
   margin-bottom: 3rem;
 }
 
@@ -369,6 +370,7 @@ h1, h2 {
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: #97D8C4;
   padding: 1rem;
 }
 .landing-info-block .left-block {
@@ -376,6 +378,20 @@ h1, h2 {
 }
 .landing-info-block .right-block {
   width: 50%;
+}
+.landing-info-block .right-block .heading-block {
+  color: #202020;
+}
+.landing-info-block .right-block .heading-block .heading-block-title {
+  font-size: 2rem;
+  font-family: "Kalnia", serif, system-ui;
+  font-weight: 500;
+}
+.landing-info-block .right-block .heading-block .heading-block-subtitle {
+  font-size: 2rem;
+  font-family: "Kalnia", serif, system-ui;
+  font-weight: 500;
+  margin-bottom: 1rem;
 }
 
 .figure-block {
@@ -391,6 +407,7 @@ h1, h2 {
 
 .text-block {
   width: 75%;
+  color: #444444;
 }
 
 .home-container {
@@ -398,16 +415,35 @@ h1, h2 {
   justify-content: space-evenly;
   align-items: center;
   flex-wrap: wrap;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
 }
 
 .home-container .home-card {
   width: 20%;
 }
-.home-container .home-card .card-figure {
+.home-container .home-card .home-card-figure {
   width: 100%;
 }
-.home-container .home-card .card-figure img {
+.home-container .home-card .home-card-figure img {
   width: 100%;
+  border-radius: 0.25rem;
+}
+.home-container .home-card .home-card-title {
+  font-family: "Kalnia", serif, system-ui;
+  font-weight: 400;
+  font-size: 1.5rem;
+  text-align: center;
+  margin-bottom: 0.75rem;
+}
+.home-container .home-card .home-card-title .home-card-strong {
+  font-family: "Kalnia", serif, system-ui;
+  font-weight: 500;
+}
+.home-container .home-card .home-card-text {
+  font-size: 1rem;
+  text-align: center;
+  color: #444444;
 }
 
 .why-wrapper {
@@ -415,6 +451,16 @@ h1, h2 {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  background-color: #97D8C4;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+.why-wrapper .page-subtitle {
+  width: 100%;
+  text-align: center;
+  background-color: #3ba786;
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
 }
 
 .why-container {
@@ -426,7 +472,9 @@ h1, h2 {
 }
 .why-container .home-card {
   width: 15%;
-  min-height: 17.5rem;
+  min-height: 22rem !important;
+  background-color: #f6f6f6;
+  border-radius: 0.25rem;
   padding: 1rem;
   gap: 1rem;
   display: flex;
@@ -434,11 +482,20 @@ h1, h2 {
   justify-content: flex-start;
   align-items: center;
 }
-.why-container .home-card .card-figure {
+.why-container .home-card .home-card-figure {
   width: 50%;
 }
-.why-container .home-card .card-figure img {
+.why-container .home-card .home-card-figure img {
   width: 100%;
+}
+.why-container .home-card .home-card-title {
+  font-family: "Kalnia", serif, system-ui;
+  font-weight: 400;
+}
+.why-container .home-card .home-card-text {
+  text-align: center;
+  font-size: 0.9rem;
+  color: #444444;
 }
 
 .quote-parallax-home {
@@ -469,11 +526,14 @@ h1, h2 {
 }
 
 @media all and (max-width: 480px) {
+  .home-container .home-card {
+    width: 60%;
+  }
   .why-container {
     gap: 1.5rem;
   }
   .why-container .home-card {
-    width: 90%;
+    width: 80%;
   }
   .landing-section .landing-section-left .landing-title {
     font-size: 2rem;
@@ -499,14 +559,20 @@ h1, h2 {
   }
 }
 @media all and (min-width: 481px) and (max-width: 767px) {
+  .home-container .home-card {
+    width: 50%;
+  }
   .why-container {
     gap: 2rem;
   }
   .why-container .home-card {
-    width: 75%;
+    width: 70%;
   }
 }
 @media all and (min-width: 768px) and (max-width: 991px) {
+  .home-container .home-card {
+    width: 40%;
+  }
   .why-container {
     gap: 2rem;
   }
@@ -544,6 +610,36 @@ h1, h2 {
     width: 100%;
     max-width: 100%;
     margin-right: 0;
+  }
+  .landing-info-block {
+    flex-direction: column-reverse;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+  }
+  .landing-info-block .left-block {
+    width: 90%;
+  }
+  .landing-info-block .left-block .figure-block img {
+    width: 55%;
+  }
+  .landing-info-block .right-block {
+    width: 90%;
+    margin-bottom: 2rem;
+  }
+  .landing-info-block .text-block {
+    width: 100%;
+  }
+  .home-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+  .home-container .home-card {
+    margin-bottom: 2rem;
+  }
+  .why-container .home-card .home-card-title {
+    font-size: 1.25rem;
   }
 }
 

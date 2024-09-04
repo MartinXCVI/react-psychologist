@@ -80,12 +80,27 @@
   width: 100%;
   min-height: 90vh;
   @include mx.flexRow(center, center);
+  background-color: color.$firstColor;
   padding: 1rem;
   .left-block {
     width: 50%;
   }
   .right-block {
     width: 50%;
+    .heading-block {
+      color: color.$lightBlack;
+      .heading-block-title {
+        font-size: 2rem;
+        font-family: font.$titleFont;
+        font-weight: 500;
+      }
+      .heading-block-subtitle {
+        font-size: 2rem;
+        font-family: font.$titleFont;
+        font-weight: 500;
+        margin-bottom: 1rem;
+      }
+    }
   }
 }
 
@@ -99,25 +114,55 @@
 
 .text-block {
   width: 75%;
+  color: color.$darkerGrey;
 }
 
 .home-container {
   @include mx.flexRow(var.$evenly, center);
   flex-wrap: wrap;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
 }
 
 .home-container .home-card {
   width: 20%;
-  .card-figure {
+  .home-card-figure {
     width: 100%;
     img {
       width: 100%;
+      border-radius: 0.25rem;
     }
+  }
+  .home-card-title {
+    font-family: font.$titleFont;
+    font-weight: 400;
+    font-size: 1.5rem;
+    text-align: center;
+    margin-bottom: 0.75rem;
+    .home-card-strong {
+      font-family: font.$titleFont;
+      font-weight: 500;
+    }
+  }
+  .home-card-text {
+    font-size: 1rem;
+    text-align: center;
+    color: color.$darkerGrey;
   }
 }
 
 .why-wrapper {
   @include mx.flexCol(center, center);
+  background-color: color.$firstColor;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  .page-subtitle {
+    width: 100%;
+    text-align: center;
+    background-color: color.$secondColor;
+    padding-top: 0.25rem;
+    padding-bottom: 0.25rem;
+  }
 }
 
 .why-container {
@@ -126,15 +171,26 @@
   flex-wrap: wrap;
   .home-card {
     width: 15%;
-    min-height: 17.5rem;
+    min-height: 22rem !important;
+    background-color: color.$whiteSmoke;
+    border-radius: 0.25rem;
     padding: 1rem;
     gap: 1rem;
     @include mx.flexCol(flex-start, center);
-    .card-figure {
+    .home-card-figure {
       width: 50%;
       img {
       width: 100%;
       }
+    }
+    .home-card-title {
+      font-family: font.$titleFont;
+      font-weight: 400;
+    }
+    .home-card-text {
+      text-align: center;
+      font-size: 0.9rem;
+      color: color.$darkerGrey;
     }
   }
 }
@@ -151,10 +207,17 @@
 }
 
 @media all and (max-width: 480px) {
+
+  .home-container {
+    .home-card {
+      width: 60%;
+    }
+  }
+
   .why-container {
     gap: 1.5rem;
     .home-card {
-      width: 90%;
+      width: 80%;
     }
   }
   .landing-section {
@@ -193,15 +256,29 @@
 }
 
 @media all and (min-width: 481px) and (max-width: 767px) {
+
+  .home-container {
+    .home-card {
+      width: 50%;
+    }
+  }
+
   .why-container {
     gap: 2rem;
     .home-card {
-      width: 75%;
+      width: 70%;
     }
   }
 }
 
 @media all and (min-width: 768px) and (max-width: 991px) {
+
+  .home-container {
+    .home-card {
+      width: 40%;
+    }
+  }
+
   .why-container {
     gap: 2rem;
     .home-card {
@@ -229,6 +306,42 @@
       width: 100%;
       max-width: 100%;
       margin-right: 0;
+    }
+  }
+
+  .landing-info-block {
+    flex-direction: column-reverse;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    .left-block {
+      width: 90%;
+      .figure-block {
+        img {
+          width: 55%;
+        }
+      }
+    }
+    .right-block {
+      width: 90%;
+      margin-bottom: 2rem;
+    }
+    .text-block {
+      width: 100%;
+    }
+  }
+
+  .home-container {
+    @include mx.flexCol(var.$evenly, center);
+    .home-card {
+      margin-bottom: 2rem;
+    }
+  }
+
+  .why-container {
+    .home-card {
+      .home-card-title {
+        font-size: 1.25rem;
+      }
     }
   }
 }
